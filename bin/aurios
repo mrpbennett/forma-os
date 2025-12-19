@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source $FORMA_PATH/bin/forma-sub/header.sh
+source $FORMA_PATH/bin/forma-sub/menu.sh

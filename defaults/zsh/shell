@@ -1,0 +1,5 @@
+# Set complete path
+export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/forma/bin:$PATH"
+set +h
+
+export forma_PATH="$HOME/.local/share/forma"

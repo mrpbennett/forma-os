@@ -1,0 +1,49 @@
+{
+  "fastapi cmd": {
+    "prefix": "fastapi",
+    "body": [
+      "CMD [\"uvicorn\", \"src.main:app\", \"--proxy-headers\", \"--host\", \"0.0.0.0\", \"--port\", \"80\"]"
+    ],
+    "description": "FastAPI CMD"
+  },
+  "Docker Python FastAPI with Poetry": {
+    "prefix": "docker-fastapi-poetry",
+    "body": [
+      "# Use official Python runtime as base image (matching pyproject.toml requirement)",
+      "FROM python:3.13-slim",
+      "# Set environment variables",
+      "ENV PYTHONUNBUFFERED=1 \\",
+      "    PYTHONDONTWRITEBYTECODE=1 \\",
+      "    POETRY_VERSION=1.8.3 \\",
+      "    POETRY_HOME=\"/opt/poetry\" \\",
+      "    POETRY_NO_INTERACTION=1 \\",
+      "    POETRY_VIRTUALENVS_IN_PROJECT=true \\",
+      "    POETRY_VIRTUALENVS_CREATE=true \\",
+      "    PYSETUP_PATH=\"/opt/pysetup\" \\",
+      "    VENV_PATH=\"/opt/pysetup/.venv\"",
+      "# Prepend poetry and venv to path",
+      "ENV PATH=\"\\$POETRY_HOME/bin:\\$VENV_PATH/bin:\\$PATH\"",
+      "# Set working directory",
+      "WORKDIR \\$PYSETUP_PATH",
+      "# Install system dependencies and Poetry",
+      "RUN dnf update -y && dnf install -y \\",
+      "    curl \\",
+      "    @development-tools \\",
+      "    && curl -sSL https://install.python-poetry.org | python3 - \\",
+      "    && dnf clean all",
+      "# Copy dependency files",
+      "COPY pyproject.toml ./",
+      "# Install dependencies (--only main for newer Poetry versions)",
+      "RUN poetry install --only main --no-root",
+      "# Set app working directory",
+      "WORKDIR /app",
+      "# Copy application code",
+      "COPY . /app",
+      "# Expose port",
+      "EXPOSE 8000",
+      "# Run the application",
+      "CMD [\"fastapi\", \"run\", \"src/main.py\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"]"
+    ],
+    "description": "Dockerfile for FastAPI application with Poetry dependency management"
+  }
+}

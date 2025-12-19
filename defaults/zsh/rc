@@ -1,0 +1,5 @@
+source ~/.local/share/forma/defaults/zsh/shell
+source ~/.local/share/forma/defaults/zsh/aliases
+source ~/.local/share/forma/defaults/zsh/functions
+source ~/.local/share/forma/defaults/zsh/prompt
+source ~/.local/share/forma/defaults/zsh/init
