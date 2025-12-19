@@ -20,7 +20,7 @@ This repo is intentionally opinionated: it targets Fedora, assumes GNOME, and op
 ## Quick Install
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/mrpbennett/forma/refs/heads/main/boot.sh | bash
+curl -sSL https://raw.githubusercontent.com/mrpbennett/forma-os/refs/heads/main/boot.sh | bash
 ```
 
 `boot.sh` updates the system, clones the repo to `~/.local/share/forma`, and runs `install.sh`.
@@ -28,7 +28,7 @@ curl -sSL https://raw.githubusercontent.com/mrpbennett/forma/refs/heads/main/boo
 If you want a different branch or ref, set `forma_REF` before running the script:
 
 ```bash
-forma_REF=stable curl -sSL https://raw.githubusercontent.com/mrpbennett/forma/refs/heads/main/boot.sh | bash
+forma_REF=stable curl -sSL https://raw.githubusercontent.com/mrpbennett/forma-os/refs/heads/main/boot.sh | bash
 ```
 
 ## What The Install Does
