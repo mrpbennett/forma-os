@@ -120,7 +120,6 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 40
 gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false
 gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'DOTS'
 gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
-gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
 gsettings set org.gnome.shell.extensions.dash-to-dock animation-time 0.25
 gsettings set org.gnome.shell.extensions.dash-to-dock hide-delay 0.15
 gsettings set org.gnome.shell.extensions.dash-to-dock show-delay 0.2
