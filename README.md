@@ -1,4 +1,5 @@
 ![banner](misc/image.png)
+
 Forma is a Fedora-first system bootstrapper and dotfiles repo that turns a fresh Fedora 39+ install into a configured, developer-ready GNOME workstation. It installs terminal tooling, desktop applications, GNOME extensions and settings, and applies curated configuration files for common apps.
 
 This repo is intentionally opinionated: it targets Fedora, assumes GNOME, and optimizes for a clean, productive setup with minimal manual steps.
@@ -12,7 +13,7 @@ This repo is intentionally opinionated: it targets Fedora, assumes GNOME, and op
 
 ## Requirements
 
-- Fedora **39+** (checked in `install/check-version.sh`)
+- Fedora **43+** (checked in `install/check-version.sh`)
 - **x86_64** or **i686** architecture
 - GNOME (desktop setup and tweaks are only applied under GNOME)
 - Network access and `sudo`
@@ -25,11 +26,6 @@ curl -sSL https://raw.githubusercontent.com/mrpbennett/forma-os/refs/heads/main/
 
 `boot.sh` updates the system, clones the repo to `~/.local/share/forma`, and runs `install.sh`.
 
-If you want a different branch or ref, set `forma_REF` before running the script:
-
-```bash
-forma_REF=stable curl -sSL https://raw.githubusercontent.com/mrpbennett/forma-os/refs/heads/main/boot.sh | bash
-```
 
 ## What The Install Does
 
@@ -143,7 +139,7 @@ Key configs shipped in this repo and copied during install:
 
 ## CLI Menu
 
-There is an interactive `gum`-based menu in `bin/aurios` and `bin/aurios-sub/*` for tasks like theme switching, fonts, updates, installs, and uninstalls. It expects the repo to live at `~/.local/share/forma`.
+There is an interactive `gum`-based menu in `bin/forma` and `bin/forma-sub/*` for tasks like theme switching, fonts, updates, installs, and uninstalls. It expects the repo to live at `~/.local/share/forma`.
 
 ## Directory Structure
 
