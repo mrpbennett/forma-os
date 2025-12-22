@@ -5,6 +5,11 @@ set -e
 # Improved error handling for boot script
 trap 'echo "forma boot failed! Check your internet connection and try again."' ERR
 
+# Force non-interactive git to avoid credential prompts in unattended installs.
+export GIT_TERMINAL_PROMPT=0
+export GIT_ASKPASS=/usr/bin/true
+export GCM_INTERACTIVE=never
+
 ascii_art='
   ______
  /      \
@@ -30,8 +35,7 @@ fi
 
 echo "Cloning forma..."
 rm -rf ~/.local/share/forma
-if ! GIT_TERMINAL_PROMPT=0 GIT_ASKPASS=/usr/bin/true \
-    git clone https://github.com/mrpbennett/forma.git ~/.local/share/forma; then
+if ! git clone https://github.com/mrpbennett/forma-os.git ~/.local/share/forma; then
     echo "Failed to clone forma repository"
     exit 1
 fi
