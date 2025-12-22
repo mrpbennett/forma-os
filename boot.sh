@@ -30,7 +30,8 @@ fi
 
 echo "Cloning forma..."
 rm -rf ~/.local/share/forma
-if ! git clone https://github.com/mrpbennett/forma.git ~/.local/share/forma; then
+if ! GIT_TERMINAL_PROMPT=0 GIT_ASKPASS=/usr/bin/true \
+    git clone https://github.com/mrpbennett/forma.git ~/.local/share/forma; then
     echo "Failed to clone forma repository"
     exit 1
 fi
