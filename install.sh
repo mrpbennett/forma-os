@@ -33,8 +33,9 @@ if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
   # Install desktop tools and tweaks
   source ~/.local/share/forma/install/desktop.sh
 
-  # Install home row mods and capslock remap
-  source ~/.local/share/forma/defaults/keyboard/kanata-install.sh
+  # Install home row mods and capslock remap + Mac like copy and paste
+  source ~/.local/share/forma/defaults/keyboard/clipboard.sh
+  source ~/.local/share/forma/defaults/keyboard/kanata/kanata-install.sh
 
   # Revert to normal idle and lock settings
   gsettings set org.gnome.desktop.screensaver lock-enabled true
